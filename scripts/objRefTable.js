@@ -11,17 +11,18 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Behaviors.Fade.Acts.StartFade,
+		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.Mouse.Cnds.IsOverObject,
 		C3.Plugins.Mouse.Acts.SetCursor,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.System.Acts.SetLayerOpacity,
 		C3.Plugins.Sprite.Exps.Opacity,
+		C3.Plugins.Text.Acts.SetOpacity,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.AJAX.Acts.RequestFile,
 		C3.Behaviors.Fade.Cnds.OnFadeOutEnd,
-		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.Audio.Acts.PlayByName,
@@ -29,9 +30,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Fade.Cnds.OnFadeInEnd,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Cnds.CompareBoolVar,
+		C3.Plugins.System.Cnds.Compare,
+		C3.Plugins.Mouse.Exps.X,
 		C3.Plugins.AJAX.Cnds.OnComplete,
 		C3.Plugins.Arr.Acts.JSONLoad,
-		C3.Plugins.AJAX.Exps.LastData
+		C3.Plugins.AJAX.Exps.LastData,
+		C3.Plugins.Sprite.Cnds.PickByUID,
+		C3.Plugins.Sprite.Acts.SetOpacity
 	];
 };
 self.C3_JsPropNameTable = [
@@ -40,12 +45,15 @@ self.C3_JsPropNameTable = [
 	{Mouse: 0},
 	{in: 0},
 	{out: 0},
+	{outtotitle: 0},
 	{Sprite: 0},
 	{text: 0},
 	{Audio: 0},
 	{BinaryData: 0},
 	{AJAX: 0},
 	{Array: 0},
+	{pageList: 0},
+	{Sprite2: 0},
 	{page: 0},
 	{ontransition: 0}
 ];
@@ -58,5 +66,7 @@ self.InstanceType = {
 	Audio: class extends self.IInstance {},
 	BinaryData: class extends self.IBinaryDataInstance {},
 	AJAX: class extends self.IInstance {},
-	Array: class extends self.IArrayInstance {}
+	Array: class extends self.IArrayInstance {},
+	pageList: class extends self.ITextInstance {},
+	Sprite2: class extends self.ISpriteInstance {}
 }
